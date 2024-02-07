@@ -1,10 +1,10 @@
-package calculator.compound_interest;
+package calculator.compoundInterest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CompoundInterestApplicationTests {
+class MainTests {
 
     @Test
     void contextLoads() {

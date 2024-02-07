@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Compound Interest</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        .personlist{
+            margin-left: 50px;
+            margin-top: 20px;
+            width: 1000px;
+            border: 1px solid black;
+            border-radius: 6px;
+        }
+        .noperson{
+            margin-left: 10px;
+            margin-bottom: 4px;
+            font-family: Arial;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<h1>Compound Interest</h1>
+
+<form action="/addperson" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="principal">Initial investment:</label>
+    <input type="number" id="principal" name="principal" required>
+
+    <label for="interest">Interest:</label>
+    <input type="number" id="interest" name="interest" required>
+
+    <label for="years">Years:</label>
+    <input type="number" id="years" name="years" required>
+
+    <button type="submit">Add Customer</button>
+</form>
+<div class="personlist">
+<ul>
+    <li th:each="person : ${persons}">
+        <p th:text="${person.getName()} + ' initial investment is: ' +
+                        ${person.getPrincipal()} + ' with a ' +
+                        ${person.getInterest()} + ' % interest rate and holding for ' +
+                        ${person.getYears()} + ' year, the total value is: ' +
+                        ${person.getAmount()} + ' euro'"></p>
+
+    </li>
+</ul>
+<div class="noperson" th:if="${message}" th:text="${message}"></div>
+</div>
+</body>
+</html>

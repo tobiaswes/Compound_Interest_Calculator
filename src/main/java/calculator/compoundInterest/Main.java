@@ -1,13 +1,13 @@
-package calculator.compound_interest;
+package calculator.compoundInterest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CompoundInterestApplication {
+public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(CompoundInterestApplication.class, args);
+        SpringApplication.run(Main.class, args);
     }
 
 }
