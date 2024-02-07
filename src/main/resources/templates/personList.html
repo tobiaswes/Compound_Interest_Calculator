@@ -89,12 +89,13 @@
 </form>
 <div class="personlist">
 <ul>
-    <li th:each="person : ${persons}">
+    <li th:each="person, iterStat : ${persons}">
         <p th:text="${person.getName()} + ' initial investment is: ' +
                         ${person.getPrincipal()} + ' with a ' +
                         ${person.getInterest()} + ' % interest rate and holding for ' +
                         ${person.getYears()} + ' year, the total value is: ' +
                         ${person.getAmount()} + ' euro'"></p>
+        <a th:href="@{/remove/{index}(index=${iterStat.index})}"><span style="color: red;">Remove</span></a>
 
     </li>
 </ul>
