@@ -1,5 +1,7 @@
-package calculator.compoundInterest;
+package calculator.compoundInterest.controller;
 
+import calculator.compoundInterest.CompoundInterestCalculator;
+import calculator.compoundInterest.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,6 @@ public class CompoundInterestController {
 
     private List<Person> personList;
     private CompoundInterestCalculator calculator;
-
     @Autowired
     public CompoundInterestController(CompoundInterestCalculator calculator){
         this.calculator = calculator;
@@ -65,4 +66,5 @@ public class CompoundInterestController {
         model.addAttribute("person", personList);
         return "redirect:/";
     }
+
 }
